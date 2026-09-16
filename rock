@@ -1,0 +1,21 @@
+import random
+
+choices = ["가위", "바위", "보"]
+computer = random.choice(choices)
+player = input("가위, 바위, 보 중 하나를 입력하세요: ").strip()
+
+if player not in choices:
+    print("가위, 바위, 보 중 하나만 입력해주세요.")
+else:
+    print(f"컴퓨터: {computer}")
+
+    if player == computer:
+        print("비겼어요!")
+    elif (
+        (player == "가위" and computer == "보")
+        or (player == "바위" and computer == "가위")
+        or (player == "보" and computer == "바위")
+    ):
+        print("이겼어요! 🎉")
+    else:
+        print("졌어요!")
